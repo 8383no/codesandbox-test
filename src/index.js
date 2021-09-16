@@ -116,3 +116,7 @@
 // 引数＝◯●がない場合、undefinedとなってしまう。それを避けるために、上記のように書く
 const sayHello = (name = "ゲスト") => console.log(`こんにちは！${name}さん！`);
 sayHello("hamino");
+
+/**
+ *
+ */
