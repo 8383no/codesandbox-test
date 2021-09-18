@@ -114,9 +114,74 @@
  */
 // 引数＝◯●で、引数に何も入っていない場合、◯●がデフォルト値として設定される
 // 引数＝◯●がない場合、undefinedとなってしまう。それを避けるために、上記のように書く
-const sayHello = (name = "ゲスト") => console.log(`こんにちは！${name}さん！`);
-sayHello("hamino");
+// const sayHello = (name = "ゲスト") => console.log(`こんにちは！${name}さん！`);
+// sayHello("hamino");
 
 /**
- *　スプレッド
+ *　スプレッド構文...
  */
+// 配列の展開
+// const arr1 = [1, 2];
+// // console.log(arr1);
+// // console.log(...arr1);
+
+// const sumFunc = (num1, num2) => console.log(num1 + num2);
+// sumFunc(arr1[0], arr1[1]);
+// sumFunc(...arr1);
+
+// まとめる
+// const arr2 = [1, 2, 3, 4, 5];
+// const [num1, num2, ...arr3] = arr2;
+// console.log(num1);
+// console.log(num2);
+// console.log(arr3);
+
+// 配列のコピー、結合
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
+
+// const arr6 = [...arr4];
+// arr6[0] = 100;
+// console.log(arr6);
+// console.log(arr4);
+
+// const arr7 = [...arr4, ...arr5];
+// console.log(arr7);
+
+// arr8にarr4の値を入れ込むと、arr8に変更を加えた際、同様の変更がarr4にも加えられてしまう
+// 参照渡し
+// const arr8 = arr4;
+// arr8[0] = 100;
+// console.log(arr4);
+
+/**
+ * mapやfilterを使った配列の処理
+ */
+const nameArr = ["hamino", "takahashi", "makoto"];
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(`${index + 1}番目は${nameArr[index]}です。`);
+// }
+
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
+// console.log(nameArr2);
+
+// 上記処理を単純に書くと以下のようになる
+// 引数１つ目は配列の中身、２つ目は順番となる
+// nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です。`));
+
+// const numArr = [1, 2, 3, 4, 5];
+// const newNumArr = numArr.filter((num) => {
+//   return num % 2 === 0;
+// });
+// console.log(newNumArr);
+
+const newNameArr = nameArr.map((name) => {
+  if (name === "hamino") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArr);
